@@ -37,12 +37,20 @@ async function sendVote(event){
     await doPost(myobj)
 }
 
+async function setName(event){
+    event.preventDefault();
+    articleName = event.target.innerHTML
+    // console.log(articleName);
+    $('#title').text(articleName)
+}
+
+let articleName;
+
 $('#voteform button').on('click', async (event)=>{
     event.preventDefault()
     await doPost({
         up:1,
-        oldid:1,
-        article:$('#title').val(),
+        article:articleName,
         comment:$('#comment').val()
     })
     /* await  */render()
@@ -56,7 +64,7 @@ $('#searchform button').on('click', async event =>{
     //&origin=*' from https://stackoverflow.com/a/38921370/9608521
     const results = await response.json()
     results[1].forEach(r=>{
-        $('#results').append($('<li>').append($('<button>').text(r)))
+        $('#results').append($('<li>').append($('<button>').text(r).on('click',setName)))
     })
 
 })
