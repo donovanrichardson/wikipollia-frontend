@@ -4,7 +4,7 @@ async function render(){
     const response = await fetch('https://wikipollia.herokuapp.com/article')
     const articles = await response.json()
     articles.forEach(a=>{
-        $('#articles').append($('<li>').text(a))
+        $('#articles').append($('<li>').text(`${a.title}: ${a.score}`))
     })
 }
 
