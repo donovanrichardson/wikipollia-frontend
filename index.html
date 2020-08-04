@@ -12,7 +12,12 @@
 <body>
     <div class="grid-container">
         <ul id="articles"></ul>
-        <form action="" class='flex-container'>
+        <form id='searchform' action="" class='flex-container'>
+            <input type="text" name="query" id="query">
+            <ul id='results'></ul>
+            <button>Search</button>
+        </form>
+        <form id='voteform' action="" class='flex-container'>
             <input class='vote' type="text" name="title" id="title">
             <textarea class='vote' name="comment" id="comment" cols="30" rows="10"></textarea>
             <button>Upvote</button>

@@ -37,7 +37,7 @@ async function sendVote(event){
     await doPost(myobj)
 }
 
-$('form button').on('click', async (event)=>{
+$('#voteform button').on('click', async (event)=>{
     event.preventDefault()
     await doPost({
         up:1,
@@ -46,5 +46,18 @@ $('form button').on('click', async (event)=>{
         comment:$('#comment').val()
     })
     /* await  */render()
+})
+
+$('#searchform button').on('click', async event =>{
+    event.preventDefault()
+    $('#results').empty()
+    const searchTerm = $('#query').val()
+    const response = await fetch(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&limit=10&namespace=0&format=json&origin=*`)
+    //&origin=*' from https://stackoverflow.com/a/38921370/9608521
+    const results = await response.json()
+    results[1].forEach(r=>{
+        $('#results').append($('<li>').append($('<button>').text(r)))
+    })
+
 })
 render()

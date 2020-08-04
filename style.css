@@ -1,9 +1,37 @@
+body{
+
+    max-height:100%;
+    max-width: 100%; /* might have to change */
+}
+
 .grid-container{
     display:grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'a b'
+    'c b';
 }
 
 .flex-container{
+    grid-area: b;
     display:flex;
     flex-direction: column;
+}
+
+#articles{
+    grid-area:a
+}
+
+#searchform{
+    grid-area:c;
+}
+
+#results li{
+    display: block;
+}
+
+#results button{
+    width:90%;
+    margin: 0 auto;
+    font-size: 24px;
 }
