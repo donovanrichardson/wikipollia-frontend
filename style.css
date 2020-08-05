@@ -2,14 +2,8 @@ body{
 
     max-height:100%;
     max-width: 100%; /* might have to change */
-}
-
-.grid-container{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    'a b'
-    'c b';
+    /* overflow-wrap: word-break; */
+    overflow-wrap: break-word;
 }
 
 .flex-container{
@@ -26,12 +20,32 @@ body{
     grid-area:c;
 }
 
+#results{
+    padding:0;
+}
+
 #results li{
     display: block;
+    /* margin: 0 auto; */
+    text-align: center;
 }
 
 #results button{
-    width:90%;
-    margin: 0 auto;
-    font-size: 24px;
+    width:250px;
+    font-size: 14px;
+}
+
+#title{
+    text-align: center;
+}
+
+@media (min-width:640px){
+    .grid-container{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'a b'
+        'c b';
+        font-size: 24px;
+    }
 }
