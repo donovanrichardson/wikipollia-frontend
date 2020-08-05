@@ -18,9 +18,13 @@ async function doPost(obj){
     },
     body:JSON.stringify(obj)
     });
-    console.log(await postreq.json())
+    // console.log(postreq);
+    console.log(obj);
+    const thejson = await postreq.json()
+    console.log(thejson);
         }catch(err){
             console.error(err);
+            console.log(err);
         }
 }
 
@@ -48,11 +52,15 @@ let articleName;
 
 $('#voteform button').on('click', async (event)=>{
     event.preventDefault()
-    await doPost({
-        up:1,
+    const upvote = event.target.attributes.getNamedItem('id').value === 'upvote'
+    // console.log(upvote);
+    const postable = {
+        up:upvote,
         article:articleName,
         comment:$('#comment').val()
-    })
+    }
+    console.log(postable);
+    await doPost(postable)
     /* await  */render()
 })
 

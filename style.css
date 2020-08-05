@@ -22,6 +22,9 @@ body{
     grid-area: b;
     display:flex;
     flex-direction: column;
+    margin: auto;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 #articles{
@@ -35,6 +38,7 @@ body{
 
 #voteform{
     margin: 20px;
+    max-width:65%
 }
 
 #results{
@@ -56,9 +60,14 @@ body{
     text-align: center;
 }
 
+/* #comment{
+    max-width:90%   
+} */
+
 @media (min-width:640px){
     .grid-container{
         display:grid;
+        justify-items: center;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
         'a b'
