@@ -25,10 +25,11 @@ body{
 }
 
 #subtitle{
-    width: 60%;
+    /* width: 100%;  */
     padding: 10px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .flex-container{
@@ -74,6 +75,11 @@ body{
 #searchform{
     grid-area:c;
     margin: 20px 0;
+}
+
+#searchform button{
+    margin: 0 auto;
+    width: 110px;
 }
 
 .searchresult{
@@ -134,11 +140,7 @@ textarea{
 @media (min-width:800px){
 
     body{
-        margin: 0
-    }
-
-    #subtitle{
-        margin-bottom: 30px;
+        /* margin: 0 */
     }
 
     span.desktop{
