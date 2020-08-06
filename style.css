@@ -10,6 +10,7 @@ body{
     max-width: 100%; /* might have to change */
     /* overflow-wrap: word-break; */
     overflow-wrap: break-word;
+    margin: 0 10%;
 }
 
 .frosted{
@@ -21,6 +22,13 @@ body{
     margin:20px auto;
     display: block;
     /* text-align: center; */
+}
+
+#subtitle{
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .flex-container{
@@ -38,7 +46,8 @@ body{
 
 #articles h3{
     text-align: center;
-    margin:20px;
+    padding:5px 10px;
+    margin:20px 0;
 }
 
 #articles ul{
@@ -49,6 +58,7 @@ body{
     /* display: block; */
     margin:10px;
     justify-content: space-between;
+    padding:2px 5px;
 }
 
 #articles span{
@@ -63,7 +73,7 @@ body{
 
 #searchform{
     grid-area:c;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 .searchresult{
@@ -73,7 +83,7 @@ body{
 
 #voteform{
     margin: 20px auto;
-    max-width:65%
+    /* max-width:65% */
 }
 
 #results{
@@ -93,6 +103,7 @@ body{
 
 #title{
     text-align: center;
+    padding: 20px 0;
 }
 
 /* #comment{
@@ -116,7 +127,20 @@ span.mobile{
     display:inline;
 }
 
+textarea{
+    height: 50%
+}
+
 @media (min-width:800px){
+
+    body{
+        margin: 0
+    }
+
+    #subtitle{
+        margin-bottom: 30px;
+    }
+
     span.desktop{
         display:inline;
     }

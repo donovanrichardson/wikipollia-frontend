@@ -11,18 +11,19 @@
 </head>
 <body>
     <img id='wikipollia' src="wikipollia.svg" alt="WikiPollia">
+    <h4 id='subtitle' class='frosted'>Search for Wikipedia articles, leave a comment, and rate!</h4>
     <div class="grid-container">
         <form id='searchform' action="" class='flex-container'>
-            <input type="text" name="query" id="query">
+            <input type="text" name="query" id="query" class="form-control">
             <ul id='results'></ul>
             <button>Search</button>
         </form>
         <form id='voteform' action="" class='flex-container'>
             <p id="title" class='frosted'>Search for articles <span class='desktop'>on the left</span> <span class='mobile'> above</span></p>
-            <textarea class='vote' name="comment" id="comment" cols="30" rows="10" placeholder='leave a comment!'></textarea>
+            <textarea class='vote form-control' name="comment" id="comment" cols="30" rows="10" placeholder='leave a comment!'></textarea>
             <div id="buttons">
-                <button id='upvote'>Upvote</button>
-                <button id='downvote'>Downvote</button>
+                <button id='upvote' class ='btn btn-success'>Upvote</button> <!-- btn -->
+                <button id='downvote ' class ='btn btn-danger'>Downvote</button>
             </div>
         </form>
         <div id='articles'>
