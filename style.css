@@ -12,6 +12,11 @@ body{
     overflow-wrap: break-word;
 }
 
+.frosted{
+    background-color: #ffffffaf;
+    border-radius: 10px;
+}
+
 #wikipollia{
     margin:20px auto;
     display: block;
@@ -31,13 +36,43 @@ body{
     grid-area:a
 }
 
+#articles h3{
+    text-align: center;
+    margin:20px;
+}
+
+#articles ul{
+    padding: 0;
+}
+
+#articles li{
+    /* display: block; */
+    margin:10px;
+    justify-content: space-between;
+}
+
+#articles span{
+    /* display: block; */
+    margin: 0 5px;
+}
+
+.topArticle{
+    display: flex;
+    cursor: pointer;
+}
+
 #searchform{
     grid-area:c;
     margin: 20px;
 }
 
+.searchresult{
+    margin: 10px;
+    cursor:pointer;
+}
+
 #voteform{
-    margin: 20px;
+    margin: 20px auto;
     max-width:65%
 }
 
@@ -64,7 +99,30 @@ body{
     max-width:90%   
 } */
 
-@media (min-width:640px){
+#buttons{
+    display:flex;
+    justify-content: space-between;
+}
+#buttons button{
+    /* padding: 0 10%; */
+    width: 140px;
+    margin: 10px 0;
+}
+
+span.desktop{
+    display:none;
+}
+span.mobile{
+    display:inline;
+}
+
+@media (min-width:800px){
+    span.desktop{
+        display:inline;
+    }
+    span.mobile{
+        display:none;
+    }
     .grid-container{
         display:grid;
         justify-items: center;

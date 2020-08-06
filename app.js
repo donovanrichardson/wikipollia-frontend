@@ -1,10 +1,24 @@
+let articleName;
+
 async function render(){
-    $('#articles').empty()
+    $('#articles ul').empty()
 
     const response = await fetch('https://wikipollia.herokuapp.com/article')
     const articles = await response.json()
     articles.forEach(a=>{
-        $('#articles').append($('<li>').text(`${a.title}: ${a.score}`))
+        // $('#articles ul').append($('<li>').text(`${a.title}: ${a.score}`).addClass('frosted'))
+        $('#articles ul').append(
+            $('<li>')
+            .attr('article', a.title)
+            .append($('<span>').text(a.title))
+            .append($('<span>').text(a.score))
+            .on('click',event =>{
+                event.preventDefault()
+                articleName = event.target.attributes.getNamedItem('article').value
+                $('#title').text(articleName)
+
+            })
+            .addClass('frosted topArticle'))
     })
 }
 
@@ -48,7 +62,7 @@ async function setName(event){
     $('#title').text(articleName)
 }
 
-let articleName;
+
 
 $('#voteform button').on('click', async (event)=>{
     event.preventDefault()
@@ -68,11 +82,11 @@ $('#searchform button').on('click', async event =>{
     event.preventDefault()
     $('#results').empty()
     const searchTerm = $('#query').val()
-    const response = await fetch(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&limit=10&namespace=0&format=json&origin=*`)
+    const response = await fetch(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&limit=5&namespace=0&format=json&origin=*`)
     //&origin=*' from https://stackoverflow.com/a/38921370/9608521
     const results = await response.json()
     results[1].forEach(r=>{
-        $('#results').append($('<li>').append($('<button>').text(r).on('click',setName)))
+        $('#results').append($('<li>').append($('<div>').addClass('frosted searchresult').text(r).on('click',setName)))
     })
 
 })
