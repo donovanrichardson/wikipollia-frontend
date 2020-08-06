@@ -23,7 +23,6 @@ async function render(){
 }
 
 async function doPost(obj){
-    // console.log(
         try{
             const postreq = await fetch('https://wikipollia.herokuapp.com/vote',{
     method:"POST",
@@ -32,20 +31,14 @@ async function doPost(obj){
     },
     body:JSON.stringify(obj)
     });
-    // console.log(postreq);
-    console.log(obj);
-    const thejson = await postreq.json()
-    console.log(thejson);
+    // const thejson = await postreq.json()
         }catch(err){
             console.error(err);
-            console.log(err);
         }
 }
 
 async function sendVote(event){
-    console.log(event);
     event.preventDefault()
-    console.log($('#title').val(),$('#comment').val());
     myobj = {
         up:1,
         oldid:1,
@@ -58,7 +51,6 @@ async function sendVote(event){
 async function setName(event){
     event.preventDefault();
     articleName = event.target.innerHTML
-    // console.log(articleName);
     $('#title').text(articleName)
 }
 
@@ -67,15 +59,13 @@ async function setName(event){
 $('#voteform button').on('click', async (event)=>{
     event.preventDefault()
     const upvote = event.target.attributes.getNamedItem('id').value === 'upvote'
-    // console.log(upvote);
     const postable = {
         up:upvote,
         article:articleName,
         comment:$('#comment').val()
     }
-    console.log(postable);
     await doPost(postable)
-    /* await  */render()
+    render()
 })
 
 $('#searchform button').on('click', async event =>{
