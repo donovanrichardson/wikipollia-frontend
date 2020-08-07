@@ -3,7 +3,8 @@ let articleName;
 async function render(){
     $('#articles ul').empty()
 
-    const response = await fetch('https://wikipollia.herokuapp.com/article')
+    const response = await fetch('https://wikipollia.herokuapp.com/article/trending')
+    // const response = await fetch('http://localhost:3000/article/trending')
     const articles = await response.json()
     articles.forEach(a=>{
         // $('#articles ul').append($('<li>').text(`${a.title}: ${a.score}`).addClass('frosted'))
@@ -24,6 +25,7 @@ async function render(){
 
 async function doPost(obj){
         try{
+            // const postreq = await fetch('http://localhost:3000/vote',{
             const postreq = await fetch('https://wikipollia.herokuapp.com/vote',{
     method:"POST",
     headers:{
