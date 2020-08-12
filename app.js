@@ -16,7 +16,8 @@ async function render(){
             .on('click',event =>{
                 event.preventDefault()
                 articleName = event.target.attributes.getNamedItem('article').value
-                $('#title').text(articleName)
+                $('#title h4').text("Selected title:")
+                $('#title p').text(articleName)
 
             })
             .addClass('frosted topArticle'))

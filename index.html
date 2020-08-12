@@ -20,12 +20,12 @@
     <h4 id='subtitle' class='frosted'>Search for Wikipedia articles, leave a comment, and rate!</h4>
     <div class="grid-container">
         <form id='searchform' action="" class='flex-container'>
-            <input type="text" name="query" id="query" class="form-control">
+            <input type="text" name="query" id="query" class="form-control" placeholder='Search Here'>
             <ul id='results'></ul>
             <button class='btn btn-light'>Search</button>
         </form>
         <form id='voteform' action="" class='flex-container'>
-            <p id="title" class='frosted'>Search for articles <span class='desktop'>on the left</span> <span class='mobile'> above</span></p>
+            <div id="title" class='frosted'><h4></h4><p>Search for articles <span class='desktop'>on the left</span> <span class='mobile'> above</span></p></div>
             <textarea class='vote form-control' name="comment" id="comment" cols="30" rows="10" placeholder='leave a comment!'></textarea>
             <div id="buttons">
                 <button id='upvote' class ='btn btn-success'>Upvote</button> <!-- btn -->
