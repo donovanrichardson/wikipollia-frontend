@@ -134,9 +134,13 @@ span.mobile{
     display:inline;
 }
 
-textarea{
-    height: 50%
+h4{
+    font-size: .75rem;
 }
+
+/* textarea{
+    height: 25%
+} */
 
 @media (min-width:800px){
 
@@ -158,5 +162,8 @@ textarea{
         'a b'
         'c b';
         font-size: 24px;
+    }
+    h4{
+        font-size: 1.5rem;
     }
 }
